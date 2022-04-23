@@ -6,4 +6,5 @@ npm init -y
 npm i chalk@4.1.2
 ```
 
-hjs
+using FS for read/write in files <br/>
+[fs nodejs](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

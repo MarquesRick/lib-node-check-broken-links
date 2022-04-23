@@ -6,6 +6,15 @@ const errorHandling = (error) => {
   throw new Error(chalk.red(error.code, 'No file in path!'));
 };
 
+const extractLink = (text) => {
+  const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
+  const result = [];
+  let temp;
+  while ((temp = regex.exec(text)) != null) result.push({ [temp[1]]: temp[2] });
+
+  return result;
+};
+
 //method synchronous
 // const getFile = (pathFile) => {
 //   fs.readFile(pathFile, (encoding = 'utf-8'), (error, text) => {
@@ -26,7 +35,7 @@ const errorHandling = (error) => {
 const getFileAsync = async (pathFile) => {
   try {
     const text = await fs.promises.readFile(pathFile, (encoding = 'utf-8'));
-    log(chalk.green(text));
+    console.log(chalk.green(JSON.stringify(extractLink(text))));
   } catch (error) {
     errorHandling(error);
   } finally {

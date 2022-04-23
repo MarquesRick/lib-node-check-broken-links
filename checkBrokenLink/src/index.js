@@ -29,6 +29,8 @@ const getFileAsync = async (pathFile) => {
     log(chalk.green(text));
   } catch (error) {
     errorHandling(error);
+  } finally {
+    log(chalk.blue('operation completed!'));
   }
 };
 

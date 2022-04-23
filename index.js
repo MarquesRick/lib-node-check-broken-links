@@ -1,9 +1,11 @@
-const chalk = require("chalk");
+const chalk = require('chalk');
+const fs = require('fs');
 const log = console.log;
 
-// uso de template strings e placeholders
-log(`
-CPU: ${chalk.red("90%")}
-RAM: ${chalk.green("40%")}
-DISK: ${chalk.yellow("70%")}
-`);
+const getFile = (pathFile) => {
+  fs.readFile(pathFile, (encoding = 'utf-8'), (_, text) => {
+    log(chalk.green(text));
+  });
+};
+
+getFile('./files/text.md');

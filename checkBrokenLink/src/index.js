@@ -12,7 +12,7 @@ const extractLink = (text) => {
   let temp;
   while ((temp = regex.exec(text)) != null) result.push({ [temp[1]]: temp[2] });
 
-  return result;
+  return result.length === 0 ? 'not found link' : result;
 };
 
 //method synchronous
@@ -35,14 +35,12 @@ const extractLink = (text) => {
 const getFileAsync = async (pathFile) => {
   try {
     const text = await fs.promises.readFile(pathFile, (encoding = 'utf-8'));
-    console.log(chalk.green(JSON.stringify(extractLink(text))));
+    return JSON.stringify(extractLink(text));
   } catch (error) {
     errorHandling(error);
   } finally {
     log(chalk.blue('operation completed!'));
   }
 };
-
-//getFileAsync('./files/text.md');
 
 module.exports = getFileAsync;

@@ -43,4 +43,6 @@ const getFileAsync = async (pathFile) => {
   }
 };
 
-getFileAsync('./files/text.md');
+//getFileAsync('./files/text.md');
+
+module.exports = getFileAsync;

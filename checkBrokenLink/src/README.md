@@ -10,3 +10,4 @@ using FS for read/write in files <br/>
 [fs nodejs](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
 for create and test string regular expression
 [regex101](https://regex101.com/)
+[node fetch](https://www.npmjs.com/package/node-fetch)

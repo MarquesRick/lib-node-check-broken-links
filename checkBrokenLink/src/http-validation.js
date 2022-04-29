@@ -1,14 +1,21 @@
 const fetch = require('node-fetch');
 
-const checkStatus = async (arrayUrl) => {
-  const arrayStatus = await Promise.all(
-    arrayUrl.map(async (url) => {
-      const res = await fetch(url);
-      return res.status;
-    })
-  );
+const handleError = (error) => {
+  throw new Error(error.message);
+};
 
-  return arrayStatus;
+const checkStatus = async (arrayUrl) => {
+  try {
+    const arrayStatus = await Promise.all(
+      arrayUrl.map(async (url) => {
+        const res = await fetch(url);
+        return res.status;
+      })
+    );
+    return arrayStatus;
+  } catch (error) {
+    handleError(error);
+  }
 };
 
 const generateArrayUrl = (arrayLinks) => {
@@ -19,7 +26,17 @@ const generateArrayUrl = (arrayLinks) => {
 const validateArrayUrl = async (arrayLinks) => {
   const links = generateArrayUrl(arrayLinks);
   const statusLinks = await checkStatus(links);
-  return statusLinks;
+  //spread operator to include two arrays in one new array
+  const results = formatStringToArray(arrayLinks).map((obj, index) => ({
+    ...obj,
+    status: statusLinks[index],
+  }));
+
+  return results;
+};
+
+const formatStringToArray = (string) => {
+  return JSON.parse(string);
 };
 
 module.exports = validateArrayUrl;

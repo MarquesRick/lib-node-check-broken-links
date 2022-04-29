@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest ./__tests__",
+    "test": "jest ./__tests__ --watch --coverege=false",
     "cli": "node cli.js ./files/text.md"
   },
   "keywords": [],

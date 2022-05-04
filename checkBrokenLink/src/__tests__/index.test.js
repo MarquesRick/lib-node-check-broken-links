@@ -16,4 +16,12 @@ describe('getFileAsync::', () => {
       )
     ).toEqual(arrayMock);
   });
+  it('must return "there are no links"', async () => {
+    const result = JSON.parse(
+      await getFileAsync(
+        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/checkBrokenLink/src/__tests__/files/text_nolink.md'
+      )
+    );
+    expect(result).toBe('not found link');
+  });
 });

@@ -24,4 +24,11 @@ describe('getFileAsync::', () => {
     );
     expect(result).toBe('not found link');
   });
+  it('must return error when there is no file', async () => {
+    await expect(
+      getFileAsync(
+        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/checkBrokenLink/src/__tests__/files'
+      )
+    ).rejects.toThrow('No file in path!');
+  });
 });

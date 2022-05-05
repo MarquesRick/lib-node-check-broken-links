@@ -13,9 +13,9 @@ Made with ❤️ by Henrique Marques 👋🏽 Say hello!
 ---
 <h1 align="center">Lib Check Broken Link</h1>
 
-<h1 align="center">
+<h3 align="center">
     <a href="https://www.npmjs.com/package/checkbrokenlink">🔗 Click here to download</a>
-</h1>
+</h3>
 <p align="center">🚀 simple library developed with NodeJs for  check broken urls on markdown(.MD) files</p>
 
 ###  🏗 Creating and add packages in the project

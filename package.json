@@ -20,7 +20,7 @@
   "bin": {
     "checkbrokenlink": "./cli.js"
   },
-  "homepage": "https://github.com/MarquesRick/nodejs/tree/master/checkBrokenLink/src",
+  "homepage": "https://github.com/MarquesRick/nodejs/tree/master/checkBrokenLink",
   "author": "Henrique Marques",
   "license": "ISC",
   "scripts": {

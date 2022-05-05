@@ -1,15 +1,32 @@
 {
-  "name": "newlib",
+  "name": "checkbrokenlink",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "lib to get links in markdown files and test them showing response status",
+  "main": "./cli.js",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarquesRick"
+  },
+  "bugs": {
+    "url": "https://github.com/MarquesRick/nodejs/issues",
+    "email": "hmservicostech@outlook.com.br"
+  },
+  "keywords": [
+    "markdown",
+    "URL",
+    "broken links"
+  ],
+  "bin": {
+    "checkbrokenlink": "./cli.js"
+  },
+  "homepage": "https://github.com/MarquesRick/nodejs/tree/master/checkBrokenLink/src",
+  "author": "Henrique Marques",
+  "license": "ISC",
   "scripts": {
     "test": "jest ./__tests__ --watch --coverege=false",
-    "cli": "node cli.js ./files/text.md"
+    "cli": "node ./cli.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@types/jest": "^27.4.1",
     "chalk": "^4.1.2",

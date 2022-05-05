@@ -11,7 +11,7 @@ describe('getFileAsync::', () => {
     expect(
       JSON.parse(
         await getFileAsync(
-          '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/checkBrokenLink/src/__tests__/files/text.md'
+          '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/src/__tests__/files/text.md'
         )
       )
     ).toEqual(arrayMock);
@@ -19,7 +19,7 @@ describe('getFileAsync::', () => {
   it('must return "there are no links"', async () => {
     const result = JSON.parse(
       await getFileAsync(
-        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/checkBrokenLink/src/__tests__/files/text_nolink.md'
+        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/src/__tests__/files/text_nolink.md'
       )
     );
     expect(result).toBe('not found link');
@@ -27,7 +27,7 @@ describe('getFileAsync::', () => {
   it('must return error when there is no file', async () => {
     await expect(
       getFileAsync(
-        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/checkBrokenLink/src/__tests__/files'
+        '/Users/hmarques/work/Cursos/Alura/nodejs/node-lib-checkBrokenLink/src/__tests__/files'
       )
     ).rejects.toThrow('No file in path!');
   });

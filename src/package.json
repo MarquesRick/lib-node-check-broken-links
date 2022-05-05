@@ -24,7 +24,8 @@
   "author": "Henrique Marques",
   "license": "ISC",
   "scripts": {
-    "test": "jest ./__tests__ --watch --coverege=false",
+    "test": "jest __tests__ --watch --coverege=false",
+    "testFinal": "jest",
     "cli": "node ./cli.js"
   },
   "dependencies": {
